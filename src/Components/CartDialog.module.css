@@ -1,0 +1,123 @@
+.cartDialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+
+.cartDialogContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.cartDialogTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cartDialogList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cartDialogItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cartDialogItemImage {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cartDialogItemName {
+  flex: 1;
+  font-weight: bold;
+}
+
+.cartDialogItemQuantity {
+  margin-right: 10px;
+}
+
+.cartDialogQuantityButton {
+  margin-right: 5px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cartDialogQuantity {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+}
+
+.cartDialogItemPrice {
+  font-weight: bold;
+}
+
+.cartDialogTotal {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.cartDialogButton {
+  margin-top: 20px;
+  background-color: #554d9c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.cartDialogButton:hover {
+  background-color: #6a47cc;
+}
+.cartDialogButtonOrder{
+  margin-top: 20px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  background-color: rgb(88, 196, 88);
+}
+.cartDialogButtonOrder :hover{
+  background-color: rgb(10, 73, 10);
+}
+.cartDialogRemoveButton {
+  margin-left: 10px;
+  background-color: #d4937a;
+  padding: auto;
+  border-radius: 3px;
+  color: rgb(250, 249, 246);
+}
+
+.cartDialogRemoveButton:hover {
+  background-color: #42040a;
+}
+
+

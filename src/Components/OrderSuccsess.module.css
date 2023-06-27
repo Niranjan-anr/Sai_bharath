@@ -1,0 +1,39 @@
+.orderSuccessDialogBackdrop {
+  background-color: #79868b;
+  color: rgb(103, 136, 90);
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  opacity: 0.98;
+}
+
+.orderSuccessDialogOverlay {
+  border-radius: 1rem;
+  padding: 10px;
+  width: 400px;
+  max-width: 80%;
+  margin-top: 5rem;
+  margin-left: 25rem;
+  background-color: #fff;
+}
+
+.orderSuccessDialogContent {
+  text-align: center;
+}
+
+.orderSuccessDialogTitle {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.orderSuccessDialogButton {
+  background-color: rgb(38, 156, 103);
+  color: #DFF2BF;
+  border: none;
+  border-radius: 3px;
+  padding: 5px 10px;
+  cursor: pointer;
+}
