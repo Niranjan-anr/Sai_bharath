@@ -6,19 +6,27 @@ import Authentication from './Components/Authentication';
 
 function App() {
   const [itemCounts, setItemCounts] = useState({
-    iPhone: 0,
-    iWatch: 0,
-    iPad: 0
+    piPhone: 0,
+    piWatch: 0,
+    piPad: 0,
+    piPods: 0,
+    picharger: 0,
+    pipen: 0,
+    PacBook: 0,
+    PiCloth: 0,
+    piSafe: 0,
+    wiredEarPhones: 0,
+    piBoard: 0,
   });
   const [isAuthenticated, setAuthenticated] = useState(false);
 
   const addItemToCart = (item) => {
     setItemCounts((prevItemCounts) => ({
       ...prevItemCounts,
-      [item.id]: prevItemCounts[item.id] + 1
+      [item.id]: prevItemCounts[item.id] + 1 || 1
     }));
   };
-
+  
   const handleAuthentication = (authenticated) => {
     setAuthenticated(authenticated);
   };
@@ -28,7 +36,7 @@ function App() {
       {!isAuthenticated && <Authentication onAuthenticate={handleAuthentication} />}
       {isAuthenticated && (
         <>
-          <Header itemCounts={itemCounts} />
+          <Header  itemCounts={itemCounts} />
           <List addItemToCart={addItemToCart} />
         </>
       )}

@@ -9,7 +9,8 @@ const ContactDetails = () => {
         <p><strong>Name:</strong> ANR (Niranjan)</p>
         <p><strong>Email:</strong> niranjanreddyannareddy@email.com</p>
         <p><strong>Phone:</strong> +91 93924848249</p>
-        <p><strong>Address:</strong>go staraight take left and bendforward</p>
+        <p><strong>Address:</strong>svce,Tirupati,51507
+        </p>
       </div>
     </div>
   );

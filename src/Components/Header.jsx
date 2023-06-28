@@ -6,6 +6,14 @@ import ContactDetails from './ContactDialog';
 import iphone_image from '../Images/Iphone.jpg';
 import iwatch from '../Images/i watch.jpg';
 import i_pad from '../Images/i_pad.jpg';
+import airpadsPro from '../Images/airPodsPro.jpg';
+import icharger from '../Images/ICharger.jpg';
+import ipen from '../Images/Ipencil.jpg';
+import PacBook from '../Images/MacBook.jpg';
+import PiCloth from '../Images/PiCloth.jpg';
+import piSafe from '../Images/piSafe.jpg';
+import wiredEarPhones from '../Images/wiredEaredPhones.jpg';
+import PiBoard from '../Images/PIBoard.jpg';
 
 const Header = ({ itemCounts }) => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -31,6 +39,7 @@ const Header = ({ itemCounts }) => {
     .filter(([_, count]) => count > 0)
     .map(([item, count]) => ({
       id: item,
+
       name: item,
       count,
       image: getItemImageUrl(item),
@@ -40,12 +49,28 @@ const Header = ({ itemCounts }) => {
 
   function getItemImageUrl(item) {
     switch (item) {
-      case 'iPhone':
+      case 'piPhone':
         return iphone_image;
-      case 'iWatch':
+      case 'piWatch':
         return iwatch;
-      case 'iPad':
+      case 'piPad':
         return i_pad;
+      case 'piPods':
+        return airpadsPro;
+        case 'picharger':
+          return icharger;
+        case 'pipen':
+          return ipen;
+        case 'PacBook':
+          return PacBook;
+        case 'PiCloth':
+          return PiCloth;
+        case 'piSafe':
+          return piSafe;
+        case 'wiredEarPhones':
+          return wiredEarPhones;
+        case 'piBoard':
+          return PiBoard;
       default:
         return '';
     }
@@ -53,12 +78,28 @@ const Header = ({ itemCounts }) => {
 
   function getItemPrice(item) {
     switch (item) {
-      case 'iPhone':
+      case 'piPhone':
         return '₹70,000';
-      case 'iWatch':
+      case 'piWatch':
         return '₹35,000';
-      case 'iPad':
+      case 'piPad':
         return '₹1,20,000';
+      case 'piPods':
+        return '₹25,000';
+        case 'picharger':
+          return '₹2,500'
+        case 'pipen':
+          return '₹5,000';
+        case 'PacBook':
+          return '₹50'; 
+        case 'PiCloth':
+          return '₹1,00,000'; 
+        case 'piSafe':
+          return '₹2,500';
+        case 'wiredEarPhones':
+          return '₹1,500'; 
+        case 'piBoard':
+          return '50,000';
       default:
         return '';
     }
@@ -68,6 +109,18 @@ const Header = ({ itemCounts }) => {
     // Implement the logic to remove the item from the cart
     // using the provided itemId
     console.log('Removing item with ID:', itemId);
+  };
+
+  const handleIncrementItem = (item) => {
+    // Implement the logic to increment the item count in the cart
+    // using the provided item object
+    console.log('Incrementing item:', item);
+  };
+
+  const handleDecrementItem = (item) => {
+    // Implement the logic to decrement the item count in the cart
+    // using the provided item object
+    console.log('Decrementing item:', item);
   };
 
   return (
@@ -87,7 +140,9 @@ const Header = ({ itemCounts }) => {
         isOpen={isCartOpen}
         onClose={handleCartDialogClose}
         items={cartItems}
-        onRemoveItem={handleRemoveItem} // Pass the onRemoveItem function as a prop
+        onRemoveItem={handleRemoveItem}
+        onIncrement={handleIncrementItem}
+        onDecrement={handleDecrementItem}
       />
       {isContactOpen && (
         <div className={classes.contactContainer}>

@@ -17,14 +17,18 @@ const CartDialog = ({ isOpen, onClose, items, onRemoveItem, onDecrement }) => {
         onClose();
       }
     };
-
+  
     document.addEventListener('mousedown', handleOutsideClick);
 
     return () => {
       document.removeEventListener('mousedown', handleOutsideClick);
     };
   }, [onClose]);
-
+  useEffect(() => { 
+    applyDiscount();
+    // eslint-disable-next-line 
+  }, [coupon, items]);
+  
   const totalPrice = items?.reduce((total, item) => {
     const price = parseFloat(item.price?.replace(/,/g, '').replace('₹', '')) || 0;
     return total + price * item.count;
@@ -71,7 +75,7 @@ const CartDialog = ({ isOpen, onClose, items, onRemoveItem, onDecrement }) => {
   };
 
   const applyDiscount = () => {
-    if (coupon === 'Niranjan thaluku') {
+    if (coupon === 'Pinapple') {
       const discount = totalPrice * 0.3; // 30% discount
       setDiscountedPrice(totalPrice - discount);
     } else {

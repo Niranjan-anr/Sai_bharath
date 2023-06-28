@@ -17,7 +17,7 @@ const Authentication = ({ onAuthenticate }) => {
   };
 
   const handleLogin = () => {
-    if (username === 'aaku' && password === 'kooraku') {
+    if (username === 'pinapple' && password === 'mango') {
       setAuthenticated(true);
       onAuthenticate(true);
     } else {
