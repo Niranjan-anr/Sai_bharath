@@ -4,13 +4,13 @@ import Backdrop from './Backdrop';
 import OrderDialog from './OrderDialog';
 import OrderSuccessDialog from './OrderSuccess';
 
-const CartDialog = ({ isOpen, onClose, items, onRemoveItem, onDecrement }) => {
+const CartDialog = ({ isOpen, onClose, items }) => {
   const dialogRef = useRef(null);
   const [showOrderDialog, setShowOrderDialog] = useState(false);
   const [showOrderPlacedDialog, setShowOrderPlacedDialog] = useState(false);
   const [coupon, setCoupon] = useState('');
   const [discountedPrice, setDiscountedPrice] = useState(0);
-
+  
   useEffect(() => {
     const handleOutsideClick = (event) => {
       if (dialogRef.current && !dialogRef.current.contains(event.target)) {
@@ -38,12 +38,6 @@ const CartDialog = ({ isOpen, onClose, items, onRemoveItem, onDecrement }) => {
     // eslint-disable-next-line 
   }, [coupon]);
    
-  const handleRemoveItem = (itemId) => {
-    if (typeof onRemoveItem === 'function') {
-      onRemoveItem(itemId);
-    }
-  };
-
   const handlePlaceOrder = () => {
     setShowOrderDialog(true);
     onClose();
@@ -75,7 +69,7 @@ const CartDialog = ({ isOpen, onClose, items, onRemoveItem, onDecrement }) => {
   };
 
   const applyDiscount = () => {
-    if (coupon === 'Pinapple') {
+    if (coupon === 'pinapple') {
       const discount = totalPrice * 0.3; // 30% discount
       setDiscountedPrice(totalPrice - discount);
     } else {
@@ -102,12 +96,7 @@ const CartDialog = ({ isOpen, onClose, items, onRemoveItem, onDecrement }) => {
                     <span className={classes.cartDialogItemName}>{item.name}</span>
                     <span className={classes.cartDialogItemCount}>({item.count})</span>
                     <span className={classes.cartDialogItemPrice}>{item.price}</span>
-                    <button
-                      className={classes.cartDialogRemoveButton}
-                      onClick={() => handleRemoveItem(item.id)} // Call handleRemoveItem with itemId
-                    >
-                      Remove
-                    </button>
+                    
                   </li>
                 ))}
               </ul>

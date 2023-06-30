@@ -18,7 +18,7 @@ import PiBoard from '../Images/PIBoard.jpg';
 const Header = ({ itemCounts }) => {
   const [isCartOpen, setCartOpen] = useState(false);
   const [isContactOpen, setContactOpen] = useState(false);
-
+ 
   const handleCartButtonClick = () => {
     setCartOpen(true);
   };
@@ -35,7 +35,7 @@ const Header = ({ itemCounts }) => {
     setContactOpen(false);
   };
 
-  const cartItems = Object.entries(itemCounts)
+     const cartItems = Object.entries(itemCounts)
     .filter(([_, count]) => count > 0)
     .map(([item, count]) => ({
       id: item,
@@ -104,25 +104,6 @@ const Header = ({ itemCounts }) => {
         return '';
     }
   }
-
-  const handleRemoveItem = (itemId) => {
-    // Implement the logic to remove the item from the cart
-    // using the provided itemId
-    console.log('Removing item with ID:', itemId);
-  };
-
-  const handleIncrementItem = (item) => {
-    // Implement the logic to increment the item count in the cart
-    // using the provided item object
-    console.log('Incrementing item:', item);
-  };
-
-  const handleDecrementItem = (item) => {
-    // Implement the logic to decrement the item count in the cart
-    // using the provided item object
-    console.log('Decrementing item:', item);
-  };
-
   return (
     <header className={classes.header}>
       <h1>Pinapple</h1>
@@ -140,9 +121,7 @@ const Header = ({ itemCounts }) => {
         isOpen={isCartOpen}
         onClose={handleCartDialogClose}
         items={cartItems}
-        onRemoveItem={handleRemoveItem}
-        onIncrement={handleIncrementItem}
-        onDecrement={handleDecrementItem}
+       
       />
       {isContactOpen && (
         <div className={classes.contactContainer}>
