@@ -95,7 +95,8 @@
 .cartDialogButton:hover {
   background-color: #6a47cc;
 }
-.cartDialogButtonOrder{
+
+.cartDialogButtonOrder {
   margin-top: 20px;
   color: #fff;
   border: none;
@@ -105,9 +106,11 @@
   margin-right: 5px;
   background-color: rgb(88, 196, 88);
 }
-.cartDialogButtonOrder :hover{
+
+.cartDialogButtonOrder:hover {
   background-color: rgb(10, 73, 10);
 }
+
 .cartDialogRemoveButton {
   margin-left: 10px;
   background-color: #d4937a;
@@ -120,4 +123,8 @@
   background-color: #42040a;
 }
 
-
+@media only screen and (max-width: 600px) {
+  .cartDialogContent {
+    max-width: 100%;
+  }
+}
