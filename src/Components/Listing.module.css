@@ -23,18 +23,7 @@ img {
   margin-top: 0.5em;
 }
 
-@media only screen and (max-width: 600px) {
-  .container_image {
-    justify-content: center;
-  }
-
-  .container_image > div {
-    width: 90%;
-    max-width: 20em;
-  }
-
-  img {
-    height: auto;
-    width: 100%;
-  }
+  margin-top: 5rem;
+  margin-left: 25rem;
+  background-color: #fff;
 }
