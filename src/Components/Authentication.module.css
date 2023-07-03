@@ -7,20 +7,14 @@
   border-radius: 1rem;
   background-color: #f5f5f5;
 }
-userName{
-  width: 100%;
-}
+
 .Authentication h2 {
   margin-top: 0;
   margin-bottom: 20px;
 }
-.handleLogin{
-  max-width:55%;
-  max-height: max-content;
-  margin-left: 7rem;
-}
+
 .Authentication input {
-  margin-left:1rem;
+  width: 100%;
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -30,7 +24,6 @@ userName{
 .Authentication .passwordContainer {
   display: flex;
   align-items: center;
-  margin-left: 42px;
 }
 
 .Authentication .passwordDisplay {
@@ -69,4 +62,15 @@ userName{
 
 .Authentication button:hover {
   background-color: #687769;
+}
+
+@media only screen and (max-width: 600px) {
+  .handleLogin {
+    max-width: 100%;
+    margin-left: 0;
+  }
+
+  .Authentication .passwordContainer {
+    margin-left: 0;
+  }
 }
