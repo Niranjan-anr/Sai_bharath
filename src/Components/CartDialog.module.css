@@ -1,5 +1,3 @@
-/* CartDialog.module.css */
-
 .cartDialogOverlay {
   position: fixed;
   top: 0;
@@ -52,8 +50,26 @@
   font-weight: bold;
 }
 
-.cartDialogItemCount {
+.cartDialogItemQuantity {
   margin-right: 10px;
+}
+
+.cartDialogQuantityButton {
+  margin-right: 5px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.cartDialogQuantity {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
 }
 
 .cartDialogItemPrice {
@@ -66,7 +82,6 @@
   text-align: right;
 }
 
-.cartDialogButtonOrder,
 .cartDialogButton {
   margin-top: 20px;
   background-color: #554d9c;
@@ -77,36 +92,32 @@
   cursor: pointer;
 }
 
-.cartDialogButtonOrder:hover,
 .cartDialogButton:hover {
   background-color: #6a47cc;
 }
-
-/* Responsive Styles */
-@media only screen and (max-width: 600px) {
-  .cartDialogContent {
-    max-width: 100%;
-    padding: 10px;
-  }
-
-  .cartDialogTotal {
-    margin-top: 10px;
-  }
-
-  .cartDialogButtonOrder,
-  .cartDialogButton {
-    width: 100%;
-  }
-
-  .cartDialogItem {
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .cartDialogItemCount,
-  .cartDialogItemPrice {
-    margin-top: 5px;
-    flex-basis: 100%;
-    text-align: left;
-  }
+.cartDialogButtonOrder{
+  margin-top: 20px;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-right: 5px;
+  background-color: rgb(88, 196, 88);
 }
+.cartDialogButtonOrder :hover{
+  background-color: rgb(10, 73, 10);
+}
+.cartDialogRemoveButton {
+  margin-left: 10px;
+  background-color: #d4937a;
+  padding: auto;
+  border-radius: 3px;
+  color: rgb(250, 249, 246);
+}
+
+.cartDialogRemoveButton:hover {
+  background-color: #42040a;
+}
+
+
