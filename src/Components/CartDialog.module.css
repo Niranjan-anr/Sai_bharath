@@ -1,56 +1,112 @@
+/* CartDialog.module.css */
+
+.cartDialogOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 11;
+}
+
+.cartDialogContent {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+}
+
+.cartDialogTitle {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.cartDialogList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.cartDialogItem {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.cartDialogItemImage {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.cartDialogItemName {
+  flex: 1;
+  font-weight: bold;
+}
+
+.cartDialogItemCount {
+  margin-right: 10px;
+}
+
+.cartDialogItemPrice {
+  font-weight: bold;
+}
+
+.cartDialogTotal {
+  margin-top: 20px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.cartDialogButtonOrder,
 .cartDialogButton {
-  display: inline-block;
-  width: auto;
-  padding: 10px 20px;
+  margin-top: 20px;
   background-color: #554d9c;
   color: #fff;
   border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  margin: 0 5px; /* Add margin for spacing between buttons */
-}
-
-.cartDialogButtonOrder {
-  display: inline-block;
-  width: auto;
   padding: 10px 20px;
-  border: none;
   border-radius: 4px;
   cursor: pointer;
-  margin: 0 5px; /* Add margin for spacing between buttons */
-  background-color: rgb(88, 196, 88);
 }
 
-.cartDialogRemoveButton {
-  display: inline-block;
-  width: auto;
-  background-color: #d4937a;
-  padding: auto;
-  border-radius: 3px;
-  color: rgb(250, 249, 246);
-  margin-left: 10px;
+.cartDialogButtonOrder:hover,
+.cartDialogButton:hover {
+  background-color: #6a47cc;
 }
 
-/* Add a clearfix to prevent button alignment issues */
-.cartDialogButtonContainer::after {
-  content: "";
-  display: table;
-  clear: both;
-}
+/* Responsive Styles */
+@media only screen and (max-width: 600px) {
+  .cartDialogContent {
+    max-width: 100%;
+    padding: 10px;
+  }
 
-/* Media query for mobile devices */
-@media screen and (max-width: 600px) {
+  .cartDialogTotal {
+    margin-top: 10px;
+  }
+
+  .cartDialogButtonOrder,
   .cartDialogButton {
-    width: 100%; /* Make the buttons take full width */
-    margin: 5px 0; /* Add margin for spacing between buttons */
+    width: 100%;
   }
 
-  .cartDialogButtonOrder {
-    width: 100%; /* Make the buttons take full width */
-    margin: 5px 0; /* Add margin for spacing between buttons */
+  .cartDialogItem {
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
-  .cartDialogRemoveButton {
-    margin-left: 0; /* Reset margin */
+  .cartDialogItemCount,
+  .cartDialogItemPrice {
+    margin-top: 5px;
+    flex-basis: 100%;
+    text-align: left;
   }
 }
