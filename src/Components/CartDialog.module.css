@@ -138,4 +138,16 @@
   .cartDialogRemoveButton {
     margin-left: 5px;
   }
+
+  .cartDialogItem {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .cartDialogItemQuantity,
+  .cartDialogItemPrice,
+  .cartDialogTotal {
+    text-align: left;
+    margin-top: 5px;
+  }
 }
