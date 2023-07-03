@@ -123,8 +123,19 @@
   background-color: #42040a;
 }
 
+/* Responsive Styles */
 @media only screen and (max-width: 600px) {
   .cartDialogContent {
     max-width: 100%;
+    padding: 10px;
+  }
+
+  .cartDialogButton,
+  .cartDialogButtonOrder {
+    width: 100%;
+  }
+
+  .cartDialogRemoveButton {
+    margin-left: 5px;
   }
 }
