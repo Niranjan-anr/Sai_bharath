@@ -13,10 +13,9 @@
 .orderSuccessDialogOverlay {
   border-radius: 1rem;
   padding: 10px;
-  width: 400px;
-  max-width: 80%;
-  margin-top: 5rem;
-  margin-left: 25rem;
+  width: 90%;
+  max-width: 400px;
+  margin: 5rem auto;
   background-color: #fff;
 }
 
@@ -36,4 +35,10 @@
   border-radius: 3px;
   padding: 5px 10px;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 600px) {
+  .orderSuccessDialogOverlay {
+    margin: 5rem 1rem;
+  }
 }
