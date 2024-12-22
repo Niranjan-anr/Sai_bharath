@@ -69,7 +69,7 @@ const CartDialog = ({ isOpen, onClose, items }) => {
   };
 
   const applyDiscount = () => {
-    if (coupon === 'pinapple') {
+    if (coupon === 'Niranjan') {
       const discount = totalPrice * 0.3; // 30% discount
       setDiscountedPrice(totalPrice - discount);
     } else {

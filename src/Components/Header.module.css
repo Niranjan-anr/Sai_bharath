@@ -1,31 +1,186 @@
+/* Header Styling */
 .header {
-  background-color: #f1f1f1;
-  padding: 20px;
+  background: linear-gradient(135deg, #1272d1, #0a2c4e); /* Gradient background */
+  padding: 50px 20px;
   text-align: center;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  margin: 10px auto;
+  max-width: 1100px;
+  position: relative;
+  z-index: 10;
 }
 
-nav ul {
+/* Title Styling with Cool Font and Hover Effect */
+.title {
+  font-family: 'Montserrat', sans-serif; /* Sleek and modern font */
+  color: #fff; /* White text for contrast */
+  font-size: 4em;
+  font-weight: bold;
+  letter-spacing: 1px;
+  margin: 0;
+  transition: transform 0.3s ease;
+}
+
+.title:hover {
+  transform: scale(1.1); /* Slight zoom effect on hover */
+  color: #f39c12; /* Accent color on hover */
+}
+
+/* Navigation Styling */
+.navList {
   list-style-type: none;
   padding: 0;
   display: flex;
   justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
 }
 
-nav li {
-  margin: 0 10px;
+.navList li {
+  margin: 0;
 }
 
-@media only screen and (max-width: 600px) {
+/* Contact Button Styling */
+.contactButton {
+  background-color: #e67e22; /* Bright orange for visibility */
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.contactButton:hover {
+  background-color: #d35400; /* Slightly darker orange on hover */
+  transform: translateY(-4px); /* Hover effect for interactivity */
+}
+
+.contactButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Cart Button Styling */
+.cartButton {
+  background-color: #27ae60; /* Vibrant green for cart */
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.1em;
+  font-weight: 600;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.cartButton:hover {
+  background-color: #2ecc71; /* Slightly lighter green on hover */
+  transform: translateY(-4px);
+}
+
+.cartButton:active {
+  transform: translateY(2px);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Contact Modal/Dialog Box Styling */
+.contactContainer {
+  background-color: #ffffff; /* Soft white for contact box */
+  border-radius: 12px;
+  padding: 20px;
+  width: 320px;
+  max-width: 90%;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.closeButton {
+  background-color: #d32f2f; /* Red for close button */
+  color: white;
+  padding: 12px 24px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+  display: block;
+  width: 100%;
+  text-align: center;
+}
+
+.closeButton:hover {
+  background-color: #b71c1c;
+}
+
+.closeButton:active {
+  background-color: #8b0000;
+}
+
+/* Modal Backdrop */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 10;
+}
+
+/* Responsive Design for Smaller Screens */
+@media only screen and (max-width: 768px) {
   .header {
-    padding: 10px;
+    padding: 40px 20px;
   }
 
-  nav {
+  .title {
+    font-size: 3em;
+  }
+
+  .navList {
     flex-direction: column;
     align-items: center;
   }
 
-  nav li {
-    margin: 5px 0;
+  .navList li {
+    margin: 15px 0;
+  }
+
+  .contactButton, .cartButton {
+    font-size: 1.2em;
+    padding: 14px 30px;
+  }
+
+  .contactContainer {
+    width: 90%;
+    padding: 15px;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .header {
+    padding: 25px 15px;
+  }
+
+  .title {
+    font-size: 2.5em;
+  }
+
+  .contactButton, .cartButton {
+    font-size: 1.1em;
+    padding: 12px 24px;
+  }
+
+  .contactContainer {
+    width: 95%;
+    padding: 12px;
   }
 }

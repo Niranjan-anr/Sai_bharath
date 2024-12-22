@@ -3,17 +3,11 @@ import classes from './Header.module.css';
 import CartButton from './CartButton';
 import CartDialog from './CartDialog';
 import ContactDetails from './ContactDialog';
-import iphone_image from '../Images/Iphone.jpg';
-import iwatch from '../Images/i watch.jpg';
-import i_pad from '../Images/i_pad.jpg';
-import airpadsPro from '../Images/airPodsPro.jpg';
-import icharger from '../Images/ICharger.jpg';
-import ipen from '../Images/Ipencil.jpg';
-import PacBook from '../Images/MacBook.jpg';
-import PiCloth from '../Images/PiCloth.jpg';
-import piSafe from '../Images/piSafe.jpg';
-import wiredEarPhones from '../Images/wiredEaredPhones.jpg';
-import PiBoard from '../Images/PIBoard.jpg';
+import MilletFlour from '../Images/MilletFlour.jpg';
+import MilletBatter from '../Images/MilletBatter.png';
+import Idli from '../Images/Idli.jpg';
+import Veg from '../Images/Veg.jpg';
+import Sprouts from '../Images/Sprouts.jpg';
 
 const Header = ({ itemCounts }) => {
   const [isCartOpen, setCartOpen] = useState(false);
@@ -35,42 +29,29 @@ const Header = ({ itemCounts }) => {
     setContactOpen(false);
   };
 
-     const cartItems = Object.entries(itemCounts)
+  const cartItems = Object.entries(itemCounts)
     .filter(([_, count]) => count > 0)
     .map(([item, count]) => ({
       id: item,
-
       name: item,
       count,
       image: getItemImageUrl(item),
       price: getItemPrice(item),
-      alt: 'not loading',
+      alt: 'Image not loading',
     }));
 
   function getItemImageUrl(item) {
     switch (item) {
-      case 'piPhone':
-        return iphone_image;
-      case 'piWatch':
-        return iwatch;
-      case 'piPad':
-        return i_pad;
-      case 'piPods':
-        return airpadsPro;
-        case 'picharger':
-          return icharger;
-        case 'pipen':
-          return ipen;
-        case 'PacBook':
-          return PacBook;
-        case 'PiCloth':
-          return PiCloth;
-        case 'piSafe':
-          return piSafe;
-        case 'wiredEarPhones':
-          return wiredEarPhones;
-        case 'piBoard':
-          return PiBoard;
+      case 'Millet':
+        return MilletBatter;
+      case 'MilletFlour':
+        return MilletFlour;
+      case 'Idli':
+        return Idli;
+      case 'Sprouts':
+        return Sprouts;
+      case 'Veg':
+        return Veg;
       default:
         return '';
     }
@@ -78,42 +59,31 @@ const Header = ({ itemCounts }) => {
 
   function getItemPrice(item) {
     switch (item) {
-      case 'piPhone':
-        return '₹70,000';
-      case 'piWatch':
-        return '₹35,000';
-      case 'piPad':
-        return '₹1,20,000';
-      case 'piPods':
-        return '₹25,000';
-        case 'picharger':
-          return '₹2,500'
-        case 'pipen':
-          return '₹5,000';
-        case 'PacBook':
-          return '₹50'; 
-        case 'PiCloth':
-          return '₹1,00,000'; 
-        case 'piSafe':
-          return '₹2,500';
-        case 'wiredEarPhones':
-          return '₹1,500'; 
-        case 'piBoard':
-          return '50,000';
+      case 'Millet':
+        return '₹160';
+      case 'MilletFlour':
+        return '₹99';
+      case 'Idli':
+        return '₹49';
+      case 'Sprouts':
+        return '₹249';
+      case 'Veg':
+        return '₹29';
       default:
         return '';
     }
   }
+
   return (
     <header className={classes.header}>
-      <h1>Pinapple</h1>
+      <h1 className={classes.title}>SAI BHARATH MILLET PRODUCTS</h1>
       <nav>
-        <ul>
+        <ul className={classes.navList}>
           <li>
-            <button onClick={handleContactButtonClick}>Contact</button>
+            <button className={classes.contactButton} onClick={handleContactButtonClick}>Contact</button>
           </li>
           <li>
-            <CartButton itemCount={cartItems.length} onClick={handleCartButtonClick} />
+            <CartButton className={classes.cartButton} itemCount={cartItems.length} onClick={handleCartButtonClick} />
           </li>
         </ul>
       </nav>
@@ -121,7 +91,6 @@ const Header = ({ itemCounts }) => {
         isOpen={isCartOpen}
         onClose={handleCartDialogClose}
         items={cartItems}
-       
       />
       {isContactOpen && (
         <div className={classes.contactContainer}>

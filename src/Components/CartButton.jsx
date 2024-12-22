@@ -1,8 +1,9 @@
 import React from 'react';
+import classes from './CartButton.module.css';
 
 const CartButton = ({ itemCount, onClick }) => {
   return (
-    <button onClick={onClick}>
+    <button className={classes.cartButton} onClick={onClick}>
       Cart ({itemCount})
     </button>
   );

@@ -1,0 +1,24 @@
+.cartButton {
+    background-color: #337a5e; /* Forest green */
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.1em;
+    font-weight: 600;
+    padding: 10px 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+  }
+  
+  .cartButton:hover {
+    background-color: #2a5d4d; /* Darker green on hover */
+    transform: translateY(-2px);
+  }
+  
+  .cartButton:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  

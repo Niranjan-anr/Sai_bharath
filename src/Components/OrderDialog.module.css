@@ -1,30 +1,41 @@
+/* Order Dialog Overlay */
 .orderDialogOverlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.7); /* Darker overlay for better contrast */
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999; /* Ensure it is above other content */
 }
 
+/* Content of the Dialog */
 .orderDialogContent {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 5px;
-  max-width: 400px;
-  width: 100%;
-  max-height: 80vh;
+  background-color: #222222; /* Dark background for modern look */
+  color: #ffffff; /* White text on dark background */
+  padding: 30px;
+  border-radius: 15px;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   overflow-y: auto;
+  max-height: 80vh; /* Ensures the dialog doesn't overflow on smaller screens */
+  margin: 10px; /* Added some margin for spacing */
 }
 
+/* Title of the Dialog */
 .orderDialogTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
+  font-weight: bold;
   margin-bottom: 20px;
+  text-align: center;
+  color: #f4a261; /* Modern accent color */
 }
 
+/* List of Items in the Order */
 .orderDialogList {
   list-style-type: none;
   padding: 0;
@@ -33,28 +44,33 @@
 
 .orderDialogItem {
   display: flex;
-  align-items: center;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
 }
 
 .orderDialogItemName {
-  flex-grow: 1;
+  font-weight: bold;
 }
 
 .orderDialogItemCount {
-  margin-left: 10px;
   color: #888;
 }
 
 .orderDialogItemPrice {
-  margin-left: 10px;
+  color: #f4a261; /* Accent price color */
 }
 
+/* Total Price Section */
 .orderDialogTotal {
+  font-size: 1.4rem;
   font-weight: bold;
+  color: #f4a261;
   margin-bottom: 20px;
+  text-align: right;
 }
 
+/* Input Fields and Labels */
 .orderDialogAddress {
   margin-bottom: 20px;
 }
@@ -62,40 +78,138 @@
 .orderDialogAddress label {
   display: block;
   margin-bottom: 5px;
+  font-size: 1.1rem;
 }
 
 .orderDialogAddress input {
   width: 100%;
-  padding: 8px;
-  border: 1px solid #ccc;
-  border-radius: 3px;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+.orderDialogAddress input:focus {
+  background-color: #444;
+  outline: none;
+}
+
+/* Coupon Input */
+.orderDialogCoupon {
+  margin-bottom: 20px;
+}
+
+.orderDialogCoupon input {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #444;
+  background-color: #333;
+  color: #fff;
 }
 
 .orderDialogButton {
-  display: block;
   width: 100%;
-  padding: 10px;
-  background-color: #838b94;
-  color: #fff;
+  padding: 12px;
+  background-color: #f4a261; /* Accent button color */
+  color: #222;
   border: none;
-  border-radius: 5px;
-  font-size: 1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  margin-top: 10px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  margin-bottom: 15px;
 }
 
 .orderDialogButton:hover {
-  background-color: #585e64;
+  background-color: #e76f51;
+  transform: translateY(-2px);
 }
 
+.orderDialogButton:active {
+  background-color: #e76f51;
+  transform: translateY(1px);
+}
+
+/* Cancel Button */
+.orderDialogButtonCancel {
+  background-color: #e63946;
+  color: white;
+}
+
+.orderDialogButtonCancel:hover {
+  background-color: #d32f2f;
+}
+
+.orderDialogButtonCancel:active {
+  background-color: #b71c1c;
+}
+
+/* Responsive Design for Small Screens */
 @media only screen and (max-width: 600px) {
   .orderDialogContent {
-    padding: 10px;
-    max-width: 90%;
+    width: 95%; /* Slightly larger width for smaller screens */
+    padding: 20px; /* Reduced padding to save space */
+    max-width: 100%; /* Allow it to use full width on small screens */
+  }
+
+  .orderDialogTitle {
+    font-size: 1.6rem; /* Slightly smaller font size for titles */
   }
 
   .orderDialogButton {
-    font-size: 0.9rem;
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .orderDialogButtonCancel {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .orderDialogTotal {
+    font-size: 1.2rem; /* Adjusted font size for mobile */
+  }
+
+  .orderDialogAddress input {
+    font-size: 0.9rem; /* Slightly smaller inputs on mobile */
+  }
+
+  .orderDialogAddress label {
+    font-size: 1rem; /* Slightly smaller labels */
+  }
+}
+
+/* Additional Media Query for Larger Tablets and Small Laptops */
+@media only screen and (max-width: 900px) {
+  .orderDialogContent {
+    width: 80%; /* More width for slightly larger screens */
+  }
+
+  .orderDialogTitle {
+    font-size: 1.7rem;
+  }
+
+  .orderDialogButton {
+    font-size: 1.1rem;
+    padding: 12px;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .orderDialogContent {
+    padding: 20px;
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  .orderDialogContent {
+    padding: 15px;
+    width: 90%;
   }
 }
